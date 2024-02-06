@@ -21,8 +21,7 @@ pkg-config = "^0.3.3"
 
 [package.metadata.vcpkg]
 git = "https://github.com/microsoft/vcpkg"
-# rev = "4c1db68"
-branch = "master"
+rev = "42bb0d9"
 dependencies = ["liblzma"]
 
 [package.metadata.vcpkg.target]
