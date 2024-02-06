@@ -19,6 +19,11 @@ name = "lzma"
 [build-dependencies]
 pkg-config = "^0.3.3"
 
+[package.metadata.vcpkg]
+git = "https://github.com/microsoft/vcpkg"
+rev = "4c1db68"
+dependencies = ["liblzma"]
+
 [target.'cfg(target_env = "msvc")'.build-dependencies]
 vcpkg = "0.2"
 
