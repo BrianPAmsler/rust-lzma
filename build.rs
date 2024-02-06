@@ -1,4 +1,5 @@
 use std::env;
+use std::process::Command;
 
 fn main() {
     let target = env::var("TARGET").unwrap();
@@ -6,6 +7,10 @@ fn main() {
     let statik = env::var("CARGO_FEATURE_STATIC").is_ok();
 
     if is_windows {
+        // Install vcpkg
+        Command::new("cargo").args(&["install", "cargo-vcpkg"]).status().unwrap();
+        Command::new("cargo").args(&["vcpkg", "build"]).status().unwrap();
+        
         #[cfg(windows)]
         vcpkg::Config::new()
             .emit_includes(true)
