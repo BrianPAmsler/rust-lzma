@@ -25,7 +25,7 @@ rev = "4c1db68"
 dependencies = ["liblzma"]
 
 [package.metadata.vcpkg.target]
-x64-windows-static-md = { dependencies = ["liblzma"] }
+x86_64-pc-windows-msvc = { triplet = "x64-windows-static-md", dependencies = ["liblzma"] }
 
 [target.'cfg(target_env = "msvc")'.build-dependencies]
 vcpkg = "0.2"
